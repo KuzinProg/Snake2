@@ -154,7 +154,6 @@ void drow()
 {
 	HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
 	SetConsoleCursorPosition(hConsole, { 0,0 });
-	SetConsoleTextAttribute(hConsole, BACKGROUND_BLUE | BACKGROUND_RED|5);
 	for (int i = 0; i < width; i++)
 	{
 		std::cout << "#";
@@ -172,18 +171,14 @@ void drow()
 			} 
 			if (x==xHead&& y==yHead && empty == true)
 			{
-				SetConsoleTextAttribute(hConsole, 4);
 				std::cout << "O";
 				empty = false;
 			}
-			SetConsoleTextAttribute(hConsole, BACKGROUND_BLUE | BACKGROUND_RED | 5);
 			if (empty == true&& x == xFruit && y == yFruit)
 			{
-				SetConsoleTextAttribute(hConsole, 8);
 				std::cout << "F";
 				empty = false;
 			}
-			SetConsoleTextAttribute(hConsole, BACKGROUND_BLUE | BACKGROUND_RED | 5);
 			for (int k = 0; k < TaleSize; k++)
 			{
 				if ((Talex[k] == x && Taley[k] == y) && (empty == true))
